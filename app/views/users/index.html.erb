@@ -22,6 +22,11 @@
         </th>
 
         <th>
+        <% if @current_user == nil %>
+          
+        <% else %>
+          
+        <% end %>
         </th>
       </tr>
 
@@ -35,6 +40,14 @@
         <td>
           <%= a_user.private %>
         </td>
+
+        <td>
+
+        button to follow user when user is signed in 
+
+        </td>
+
+
 
         <td>
           <a href="/users/<%= a_user.id %>">
