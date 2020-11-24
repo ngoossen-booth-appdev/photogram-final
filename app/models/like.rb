@@ -10,9 +10,9 @@
 #
 class Like < ApplicationRecord
 
-  belongs_to(:user, { :required => false, :class_name => "User", :foreign_key => "user_id" })
+  belongs_to(:user, { :required => true, :class_name => "User", :foreign_key => "user_id" })
 
-  belongs_to(:photo, { :required => false, :class_name => "Photo", :foreign_key => "photo_id", :counter_cache => true })
+  belongs_to(:photo, { :required => true, :class_name => "Photo", :foreign_key => "photo_id", :counter_cache => true })
 
   validates(:user_id, { :presence => true })
 
@@ -20,5 +20,5 @@ class Like < ApplicationRecord
 
   validates(:photo_id, { :uniqueness => { :scope => ["user_id"], :message => "already liked" } })
 
-  
+
 end
