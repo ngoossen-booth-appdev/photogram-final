@@ -16,7 +16,7 @@ class UserAuthenticationController < ApplicationController
 
     matching_users = Users.where({ :id => the_id })
 
-    @the_user = matching_photos.at(0)
+    @the_user = matching_users.at(0)
 
     render({ :template => "users/show.html.erb" })
   end
