@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
 
-  get("/", { :controller => "user_authentication", :action => "sign_in_form" }) 
-
+  get("/", { :controller => "user_authentication", :action => "index" }) 
+  get("/users", { :controller => "user_authentication", :action => "index" })   
   
   # Routes for the Comment resource:
 
